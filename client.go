@@ -48,5 +48,15 @@ func (c *Client) Call(service, method string, in interface{}, out interface{}) e
 	}
 	defer res.Body.Close()
 
+	if res.StatusCode >= 400 {
+		var e statusError
+
+		if err := json.NewDecoder(res.Body).Decode(&e); err != nil {
+			return err
+		}
+
+		return &e
+	}
+
 	return json.NewDecoder(res.Body).Decode(out)
 }

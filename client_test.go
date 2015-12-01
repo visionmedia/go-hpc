@@ -25,3 +25,17 @@ func TestClient_Call(t *testing.T) {
 
 	assert.Equal(t, 15, out.Value)
 }
+
+func TestClient_Call_error(t *testing.T) {
+	r := rpc.NewServer()
+	r.RegisterCodec(hpc.NewCodec(), "application/json")
+	r.RegisterService(&Math{}, "")
+
+	s := httptest.NewServer(r)
+	defer s.Close()
+
+	c := hpc.NewClient(hpc.NewConfig(s.URL))
+
+	err := c.Call("math", "error", nil, nil)
+	assert.EqualError(t, err, "Boom")
+}
