@@ -4,7 +4,7 @@
 
 HPC is a Gorilla RPC v2 Codec that allows you to perform RPC-like requests using the pathname for the service and method, leaving the bodies for requests and responses.
 
-This differs from JSON-RPC which uses a JSON body envelope.
+This differs from JSON-RPC which uses a JSON body envelope. This package also hides the "Go-isms" by transforming snake-case to camel-case, for example "/files/list_all" would invoke `Files.ListAll()`.
 
 ## Example
 
