@@ -1,3 +1,4 @@
+[![GoDoc](https://godoc.org/github.com/tj/go-hpc?status.svg)](https://godoc.org/github.com/tj/go-hpc)
 
 # go-hpc
 
