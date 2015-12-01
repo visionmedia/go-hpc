@@ -7,6 +7,8 @@ This differs from JSON-RPC which uses a JSON body envelope.
 
 ## Example
 
+Service:
+
 ```go
 package hpc_test
 
@@ -50,6 +52,15 @@ func Example() {
 
   http.Handle("/", r)
   log.Fatalln(http.ListenAndServe(":3000", nil))
+}
+```
+
+Request:
+
+```
+$ curl -d '{ "prefix": "T" }' -H "Content-Type: application/json" http://localhost:3000/users/list
+{
+  "names": ["Tobi"]
 }
 ```
 
