@@ -52,7 +52,10 @@ func (c *Client) Call(service, method string, in interface{}, out interface{}) e
 		var e statusError
 
 		if err := json.NewDecoder(res.Body).Decode(&e); err != nil {
-			return err
+			return &statusError{
+				Status:  res.StatusCode,
+				Message: res.Status,
+			}
 		}
 
 		return &e
