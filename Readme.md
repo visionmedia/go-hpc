@@ -1,4 +1,4 @@
-[![GoDoc](https://godoc.org/github.com/tj/go-hpc?status.svg)](https://godoc.org/github.com/tj/go-hpc)
+[![GoDoc](https://godoc.org/github.com/tj/go-hpc?status.svg)](https://godoc.org/github.com/tj/go-hpc) [![Build Status](https://semaphoreci.com/api/v1/projects/78e40dce-39ab-41e0-8934-a38db5c9d87d/620459/badge.svg)](https://semaphoreci.com/tj/go-hpc)
 
 # go-hpc
 
